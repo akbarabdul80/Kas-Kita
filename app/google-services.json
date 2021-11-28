@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "218058164529",
+    "firebase_url": "https://kas-kita-13afa-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "kas-kita-13afa",
+    "storage_bucket": "kas-kita-13afa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218058164529:android:77f2aa1f68db3bba49c810",
+        "android_client_info": {
+          "package_name": "com.ugm.kaskita"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218058164529-fhhggdpmqa0rj9cgs1iosjhnk9b9q59d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAL05qYTpTptQrjNcpcKncwCKUKiRKpJAs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218058164529-fhhggdpmqa0rj9cgs1iosjhnk9b9q59d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
