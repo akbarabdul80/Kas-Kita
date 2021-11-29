@@ -2,9 +2,11 @@ package com.ugm.kaskita.ui.main
 
 import android.annotation.SuppressLint
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.oratakashi.viewbinding.core.binding.recyclerview.ViewHolder
 import com.oratakashi.viewbinding.core.binding.recyclerview.viewBinding
+import com.ugm.kaskita.R
 import com.ugm.kaskita.data.DataHistory
 import com.ugm.kaskita.databinding.ListHistoryBinding
 import com.ugm.kaskita.utils.Logs.formatRupiah
@@ -16,12 +18,23 @@ class MainAdapter : RecyclerView.Adapter<ViewHolder<ListHistoryBinding>>() {
         viewType: Int
     ): ViewHolder<ListHistoryBinding> = viewBinding(parent)
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder<ListHistoryBinding>, position: Int) {
         val dataHistory: DataHistory = data[position]
         with(holder.binding) {
             tvTitle.text = dataHistory.name
             tvDate.text = dataHistory.tanggal
-            tvTotal.text = dataHistory.total.formatRupiah()
+
+            if (dataHistory.type == "in") {
+                tvTotal.text = "+" + dataHistory.total.formatRupiah()
+                tvTotal.setTextColor(ContextCompat.getColor(root.context, R.color.plus))
+                imgType.setImageResource(R.drawable.ic_masuk)
+            } else {
+                tvTotal.text = "-" + dataHistory.total.formatRupiah()
+                tvTotal.setTextColor(ContextCompat.getColor(root.context, R.color.min))
+                imgType.setImageResource(R.drawable.ic_keluar)
+            }
+
         }
     }
 

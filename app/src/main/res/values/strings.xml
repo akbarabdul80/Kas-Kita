@@ -41,4 +41,7 @@
     <string name="re_password">Re-Password</string>
     <string name="title_offline">Offline Mode</string>
     <string name="title_rp">Rp. 10.000</string>
+    <string name="title_saldo_kas">Saldo Kas</string>
+    <string name="title_saldo_masuk">Saldo Masuk</string>
+    <string name="title_saldo_keluar">Saldo Keluar</string>
 </resources>

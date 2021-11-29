@@ -6,7 +6,7 @@
     <color name="colorAccent">#114CD6</color>
     <color name="white">#FFFFFF</color>
     <color name="gray">#F0F0F0</color>
-    <color name="text_color">#353535</color>
+    <color name="text_color">#757575</color>
     <color name="text">#F3F3F3</color>
     <color name="lightblack">#242424</color>
     <color name="yellow">#FFC500</color>
@@ -15,6 +15,8 @@
     <color name="verifikasi">#0AD48B</color>
     <color name="dot_active_screen3">#0e1e49</color>
 
+    <color name="plus">#114CD6</color>
+    <color name="min">#BD251C</color>
     <color name="grey">#99FFFFFF</color>
     <color name="light_grey">#61F0F0F0</color>
     <color name="dark_grey">#313131</color>
