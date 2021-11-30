@@ -14,20 +14,22 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UseCompoundDrawables">
 
         <ImageView
             android:layout_width="144dp"
             android:layout_height="144dp"
+            android:contentDescription="@string/title_null"
             android:src="@drawable/img_logo" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
             android:fontFamily="@font/extrabold"
             android:text="@string/app_name"
-            android:layout_marginTop="25dp"
-            android:textSize="28sp"
-            android:textColor="@color/colorAccent" />
+            android:textColor="@color/colorAccent"
+            android:textSize="28sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

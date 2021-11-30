@@ -48,6 +48,7 @@
         <ImageView
             android:layout_width="45dp"
             android:layout_height="45dp"
+            android:contentDescription="@string/title_null"
             android:src="@drawable/ic_profile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -101,7 +102,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/extrabold"
-                    android:text="Rp. XXXXXXX"
+                    android:text="@string/title_rp"
                     android:textColor="@color/colorPrimary"
                     android:textSize="22sp"
                     android:visibility="gone" />
@@ -119,6 +120,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/title_null"
                     android:src="@drawable/ic_logo"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -147,7 +149,9 @@
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:weightSum="2">
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:baselineAligned="false">
 
                 <LinearLayout
                     android:id="@+id/llIn"
@@ -162,6 +166,7 @@
                     <ImageView
                         android:layout_width="35dp"
                         android:layout_height="35dp"
+                        android:contentDescription="@string/title_null"
                         android:src="@drawable/ic_masuk" />
 
                     <LinearLayout
@@ -211,6 +216,7 @@
                     <ImageView
                         android:layout_width="35dp"
                         android:layout_height="35dp"
+                        android:contentDescription="@string/title_null"
                         android:src="@drawable/ic_keluar" />
 
                     <LinearLayout
@@ -247,11 +253,6 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -276,11 +277,13 @@
                     android:layout_height="300dp"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:visibility="gone">
+                    android:visibility="gone"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="140dp"
                         android:layout_height="140dp"
+                        android:contentDescription="@string/title_null"
                         android:src="@drawable/ic_data_kosong" />
 
                     <TextView
@@ -288,7 +291,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/regular"
-                        android:text="Tidak ada riwayat kas" />
+                        android:text="@string/title_data_null" />
 
                 </LinearLayout>
 

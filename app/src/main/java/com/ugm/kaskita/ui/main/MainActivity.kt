@@ -115,47 +115,50 @@ class MainActivity : AppCompatActivity(), BottomMainFragment.BottomSheet {
                         }
                     }
 
-                    binding.shDashboard.visible()
-                    binding.shDashboard.startShimmer()
-                    binding.rvHistory.gone()
-                    binding.avKas.visible()
-                    binding.tvKas.gone()
+                    with(binding){
+                        shDashboard.visible()
+                        shDashboard.startShimmer()
+                        rvHistory.gone()
+                        avKas.visible()
+                        tvKas.gone()
 
-                    binding.avIn.visible()
-                    binding.avOut.visible()
-                    binding.avIn.show()
-                    binding.avOut.show()
+                        avIn.visible()
+                        avOut.visible()
+                        avIn.show()
+                        avOut.show()
 
-                    binding.tvMasuk.gone()
-                    binding.tvKeluar.gone()
+                        tvMasuk.gone()
+                        tvKeluar.gone()
 
-                    binding.llNull.gone()
-                    Handler(Looper.getMainLooper()).postDelayed(
-                        {
-                            binding.shDashboard.gone()
-                            binding.shDashboard.stopShimmer()
-                            binding.rvHistory.visible()
-                            binding.avKas.gone()
-                            binding.tvKas.visible()
-                            binding.tvKeluar.text = tmpKeluar.formatRupiah()
-                            binding.tvMasuk.text = tmpMasuk.formatRupiah()
+                        llNull.gone()
+                        Handler(Looper.getMainLooper()).postDelayed(
+                            {
+                                shDashboard.gone()
+                                shDashboard.stopShimmer()
+                                rvHistory.visible()
+                                avKas.gone()
+                                tvKas.visible()
+                                tvKeluar.text = tmpKeluar.formatRupiah()
+                                tvMasuk.text = tmpMasuk.formatRupiah()
 
-                            binding.tvMasuk.visible()
-                            binding.tvKeluar.visible()
+                                tvMasuk.visible()
+                                tvKeluar.visible()
 
-                            binding.tvKas.text = (tmpMasuk - tmpKeluar).toString().formatRupiah()
+                                tvKas.text = (tmpMasuk - tmpKeluar).toString().formatRupiah()
 
-                            binding.avIn.gone()
-                            binding.avOut.gone()
-                            binding.avIn.hide()
-                            binding.avOut.hide()
+                                avIn.gone()
+                                avOut.gone()
+                                avIn.hide()
+                                avOut.hide()
 
-                            if (dataSaldo.size == 0) {
-                                binding.llNull.visible()
-                            }
-                            adapter.submitData(dataSaldo)
-                        }, 1000L
-                    )
+                                if (dataSaldo.size == 0) {
+                                    llNull.visible()
+                                }
+                                adapter.submitData(dataSaldo)
+                            }, 1000L
+                        )
+                    }
+
 
                 }
 

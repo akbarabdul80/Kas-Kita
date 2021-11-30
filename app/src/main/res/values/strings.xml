@@ -1,25 +1,27 @@
 <resources>
-    <string name="app_name">KasKita</string>
-    <string name="titleTanggal">Tanggal upload : 20-09-2020</string>
+    <string name="app_name" translatable="false">KasKita</string>
+    <string name="title_tanggal">Tanggal</string>
 
     <string name="title_notification">Title Notification</string>
-    <string name="title_history">History</string>
+    <string name="title_history">Riwayat</string>
     <string name="title_rp">Rp. 10.000</string>
     <string name="title_saldo_kas">Saldo Kas</string>
     <string name="title_saldo_masuk">Saldo Masuk</string>
     <string name="title_saldo_keluar">Saldo Keluar</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_sumber_pemasukan">Sumber Pemasukan</string>
-    <string name="dec_sumbar_pemasukan">Masukan sumber pemasukan</string>
-    <string name="dec_nominal">Masukan nominal saldo</string>
-    <string name="title_nominal_saldo">Nominal Saldo</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="title_sumber_pemasukan" translatable="false">Sumber Pemasukan</string>
+    <string name="dec_sumbar_pemasukan" translatable="false">Masukan sumber pemasukan</string>
+    <string name="dec_nominal" translatable="false">Masukan nominal saldo</string>
+    <string name="title_nominal_saldo" translatable="false">Nominal Saldo</string>
 
-    <string name="title_sumber_pengeluaran">Sumber Pengeluaran</string>
-    <string name="dec_sumbar_pengeluaran">Masukan sumber Pengeluaran</string>
-    <string name="title_simpan">Simpan</string>
+    <string name="title_sumber_pengeluaran" translatable="false">Sumber Pengeluaran</string>
+    <string name="dec_sumbar_pengeluaran" translatable="false">Masukan sumber Pengeluaran</string>
+    <string name="title_simpan" translatable="false">Simpan</string>
 
-    <string name="title_error_et">Silahkan isi field ini!</string>
-    <string name="title_admin">Admin</string>
-    <string name="title_day">Selamat Malam,</string>
+    <string name="title_error_et" translatable="false">Silahkan isi field ini!</string>
+    <string name="title_admin" translatable="false">Admin</string>
+    <string name="title_day" translatable="false">Selamat Malam,</string>
+    <string name="title_null">null</string>
+    <string name="title_data_null">Tidak ada riwayat kas</string>
 </resources>

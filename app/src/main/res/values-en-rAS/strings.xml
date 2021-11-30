@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KasKita</string>
+    <string name="title_tanggal">Date</string>
+    <string name="title_notification">Notification</string>
+    <string name="title_history">History</string>
+    <string name="title_rp">$1</string>
+    <string name="title_saldo_kas">"Balance "</string>
+    <string name="title_saldo_masuk">Income</string>
+    <string name="title_saldo_keluar">Expenditure</string>
+    <string name="title_null">null</string>
+    <string name="title_data_null">Tidak ada riwayat kas</string>
+</resources>
