@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.oratakashi.viewbinding.core.binding.recyclerview.ViewHolder
 import com.oratakashi.viewbinding.core.binding.recyclerview.viewBinding
 import com.ugm.kaskita.R
-import com.ugm.kaskita.data.DataHistory
+import com.ugm.kaskita.data.DataSaldo
 import com.ugm.kaskita.databinding.ListHistoryBinding
 import com.ugm.kaskita.utils.Logs.formatRupiah
 
@@ -20,17 +20,17 @@ class MainAdapter : RecyclerView.Adapter<ViewHolder<ListHistoryBinding>>() {
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder<ListHistoryBinding>, position: Int) {
-        val dataHistory: DataHistory = data[position]
+        val dataSaldo: DataSaldo = data[position]
         with(holder.binding) {
-            tvTitle.text = dataHistory.name
-            tvDate.text = dataHistory.tanggal
+            tvTitle.text = dataSaldo.name
+            tvDate.text = dataSaldo.tanggal
 
-            if (dataHistory.type == "in") {
-                tvTotal.text = "+" + dataHistory.total.formatRupiah()
+            if (dataSaldo.type == "in") {
+                tvTotal.text = "+" + dataSaldo.total.formatRupiah()
                 tvTotal.setTextColor(ContextCompat.getColor(root.context, R.color.plus))
                 imgType.setImageResource(R.drawable.ic_masuk)
             } else {
-                tvTotal.text = "-" + dataHistory.total.formatRupiah()
+                tvTotal.text = "-" + dataSaldo.total.formatRupiah()
                 tvTotal.setTextColor(ContextCompat.getColor(root.context, R.color.min))
                 imgType.setImageResource(R.drawable.ic_keluar)
             }
@@ -41,11 +41,11 @@ class MainAdapter : RecyclerView.Adapter<ViewHolder<ListHistoryBinding>>() {
     override fun getItemCount(): Int = data.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun submitData(data: List<DataHistory>) {
+    fun submitData(data: List<DataSaldo>) {
         this.data.clear()
         this.data.addAll(data)
         notifyDataSetChanged()
     }
 
-    private val data: MutableList<DataHistory> = ArrayList()
+    private val data: MutableList<DataSaldo> = ArrayList()
 }

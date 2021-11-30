@@ -8,4 +8,16 @@
     <string name="title_saldo_kas">Saldo Kas</string>
     <string name="title_saldo_masuk">Saldo Masuk</string>
     <string name="title_saldo_keluar">Saldo Keluar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_sumber_pemasukan">Sumber Pemasukan</string>
+    <string name="dec_sumbar_pemasukan">Masukan sumber pemasukan</string>
+    <string name="dec_nominal">Masukan nominal saldo</string>
+    <string name="title_nominal_saldo">Nominal Saldo</string>
+
+    <string name="title_sumber_pengeluaran">Sumber Pengeluaran</string>
+    <string name="dec_sumbar_pengeluaran">Masukan sumber Pengeluaran</string>
+    <string name="title_simpan">Simpan</string>
+
+    <string name="title_error_et">Silahkan isi field ini!</string>
 </resources>

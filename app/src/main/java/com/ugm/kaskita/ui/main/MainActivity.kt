@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -15,20 +17,22 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.oratakashi.viewbinding.core.binding.activity.viewBinding
 import com.oratakashi.viewbinding.core.tools.gone
+import com.oratakashi.viewbinding.core.tools.onClick
 import com.oratakashi.viewbinding.core.tools.visible
 import com.ugm.kaskita.R
-import com.ugm.kaskita.data.DataHistory
+import com.ugm.kaskita.data.DataSaldo
 import com.ugm.kaskita.databinding.ActivityMainBinding
+import com.ugm.kaskita.ui.main.bottom.BottomMainFragment
 import com.ugm.kaskita.utils.Converter.formatRupiah
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), BottomMainFragment.BottomSheet {
 
     private val binding: ActivityMainBinding by viewBinding()
     private lateinit var database: DatabaseReference
-    private val dataHistory: MutableList<DataHistory> = ArrayList()
+    private val dataSaldo: MutableList<DataSaldo> = ArrayList()
     private val adapter: MainAdapter by lazy {
         MainAdapter()
     }
@@ -59,15 +63,32 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            binding
             rvHistory.also {
-                it.layoutManager = LinearLayoutManager(this@MainActivity)
+                it.layoutManager = LinearLayoutManager(this@MainActivity, LinearLayout.VERTICAL, true)
                 it.adapter = adapter
             }
 
             swDashboard.setOnRefreshListener {
                 setupListener()
                 swDashboard.isRefreshing = false
+            }
+
+            llIn.onClick {
+                val bottomSheetDialog: BottomMainFragment =
+                    BottomMainFragment.newInstance("in")
+                bottomSheetDialog.show(supportFragmentManager, "Bottom saldo")
+
+                llIn.background =
+                    ResourcesCompat.getDrawable(resources, R.drawable.rectangle_in, null)
+            }
+
+            llOut.onClick {
+                val bottomSheetDialog: BottomMainFragment =
+                    BottomMainFragment.newInstance("out")
+                bottomSheetDialog.show(supportFragmentManager, "Bottom saldo")
+
+                llOut.background =
+                    ResourcesCompat.getDrawable(resources, R.drawable.rectangle_out, null)
             }
         }
 
@@ -80,14 +101,14 @@ class MainActivity : AppCompatActivity() {
             object : ValueEventListener {
 
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    dataHistory.clear()
+                    dataSaldo.clear()
                     dataSnapshot.children.forEach {
-                        dataHistory.add(it.getValue(DataHistory::class.java)!!)
+                        dataSaldo.add(it.getValue(DataSaldo::class.java)!!)
                     }
 
                     var tmpMasuk = 0
                     var tmpKeluar = 0
-                    dataHistory.forEach {
+                    dataSaldo.forEach {
                         if (it.type == "in") {
                             tmpMasuk += it.total.toInt()
                         } else {
@@ -130,11 +151,10 @@ class MainActivity : AppCompatActivity() {
                             binding.avIn.hide()
                             binding.avOut.hide()
 
-                            if (dataHistory.size == 0) {
+                            if (dataSaldo.size == 0) {
                                 binding.llNull.visible()
-                            } else {
-                                adapter.submitData(dataHistory)
                             }
+                            adapter.submitData(dataSaldo)
                         }, 1000L
                     )
 
@@ -147,5 +167,16 @@ class MainActivity : AppCompatActivity() {
             }
         )
 
+    }
+
+    override fun onDismiss() {
+        binding.llIn.background =
+            ResourcesCompat.getDrawable(resources, R.drawable.rectangle, null)
+        binding.llOut.background =
+            ResourcesCompat.getDrawable(resources, R.drawable.rectangle, null)
+    }
+
+    override fun onSubmit(data: DataSaldo) {
+        database.child("history").push().setValue(data)
     }
 }

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    tools:context=".ui.main.bottom.BottomMainFragment">
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="80dp"
+        android:layout_height="3dp"
+        android:layout_margin="10dp"
+        android:background="@color/gray2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/view1">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/semibold"
+            android:text="@string/title_saldo_masuk"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvSumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/semibold"
+            android:text="@string/title_sumber_pemasukan"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/etSumber"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/round_edittext"
+            android:fontFamily="@font/regular"
+            android:hint="@string/dec_sumbar_pemasukan"
+            android:inputType="text"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/semibold"
+            android:text="@string/title_nominal_saldo"
+            android:textSize="14sp" />
+
+
+        <EditText
+            android:id="@+id/etNominal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/round_edittext"
+            android:fontFamily="@font/regular"
+            android:hint="@string/dec_nominal"
+            android:inputType="number"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_button"
+            android:fontFamily="@font/semibold"
+            android:hint="@string/title_simpan"
+            android:textColorHint="@color/white"
+            app:backgroundTint="@null" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
