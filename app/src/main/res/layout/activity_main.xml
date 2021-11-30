@@ -30,9 +30,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/regular"
-                android:textSize="16sp"
                 android:text="Selamat Malam,"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
 
             <TextView
@@ -40,12 +40,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/semibold"
-                android:textSize="18sp"
                 android:text="Admin"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="18sp" />
         </LinearLayout>
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -155,13 +153,13 @@
                     android:padding="15dp">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/ic_masuk" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="40dp"
                         android:layout_marginStart="10dp"
                         android:orientation="vertical">
 
@@ -172,12 +170,22 @@
                             android:text="@string/title_saldo_masuk"
                             android:textSize="13sp" />
 
+                        <com.wang.avi.AVLoadingIndicatorView
+                            android:id="@+id/avIn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            app:indicatorColor="@color/colorPrimary"
+                            app:indicatorName="BallBeatIndicator" />
+
+
                         <TextView
                             android:id="@+id/tvMasuk"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
                             android:fontFamily="@font/semibold"
-                            android:text="@string/title_rp" />
+                            android:text="@string/title_rp"
+                            android:visibility="gone" />
 
                     </LinearLayout>
 
@@ -193,13 +201,13 @@
                     android:padding="15dp">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/ic_keluar" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="40dp"
                         android:layout_marginStart="10dp"
                         android:orientation="vertical">
 
@@ -210,12 +218,22 @@
                             android:text="@string/title_saldo_keluar"
                             android:textSize="13sp" />
 
+
+                        <com.wang.avi.AVLoadingIndicatorView
+                            android:id="@+id/avOut"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            app:indicatorColor="@color/colorPrimary"
+                            app:indicatorName="BallBeatIndicator" />
+
                         <TextView
                             android:id="@+id/tvKeluar"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="5sp"
                             android:fontFamily="@font/semibold"
-                            android:text="@string/title_rp" />
+                            android:text="@string/title_rp"
+                            android:visibility="gone" />
 
                     </LinearLayout>
 
@@ -243,6 +261,28 @@
                     android:text="@string/title_history"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/llNull"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:src="@drawable/ic_data_kosong" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/regular"
+                        android:text="Tidak ada riwayat kas" />
+
+                </LinearLayout>
 
                 <com.facebook.shimmer.ShimmerFrameLayout
                     android:id="@+id/shDashboard"
