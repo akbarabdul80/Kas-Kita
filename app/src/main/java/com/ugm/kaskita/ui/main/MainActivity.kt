@@ -37,9 +37,7 @@ class MainActivity : AppCompatActivity(), BottomMainFragment.BottomSheet {
         MainAdapter()
     }
 
-    val TAG = "Main"
-
-    @SuppressLint("SimpleDateFormat", "SetTextI18n")
+    @SuppressLint("SimpleDateFormat", "SetTextI18n", "WrongConstant")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -64,7 +62,8 @@ class MainActivity : AppCompatActivity(), BottomMainFragment.BottomSheet {
             }
 
             rvHistory.also {
-                it.layoutManager = LinearLayoutManager(this@MainActivity, LinearLayout.VERTICAL, true)
+                it.layoutManager =
+                    LinearLayoutManager(this@MainActivity, LinearLayout.VERTICAL, true)
                 it.adapter = adapter
             }
 
@@ -178,5 +177,9 @@ class MainActivity : AppCompatActivity(), BottomMainFragment.BottomSheet {
 
     override fun onSubmit(data: DataSaldo) {
         database.child("history").push().setValue(data)
+    }
+
+    companion object {
+        const val TAG = "Main"
     }
 }

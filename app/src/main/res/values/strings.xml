@@ -20,4 +20,6 @@
     <string name="title_simpan">Simpan</string>
 
     <string name="title_error_et">Silahkan isi field ini!</string>
+    <string name="title_admin">Admin</string>
+    <string name="title_day">Selamat Malam,</string>
 </resources>
