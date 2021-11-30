@@ -9,7 +9,6 @@
     <string name="title_saldo_masuk">Saldo Masuk</string>
     <string name="title_saldo_keluar">Saldo Keluar</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="title_sumber_pemasukan" translatable="false">Sumber Pemasukan</string>
     <string name="dec_sumbar_pemasukan" translatable="false">Masukan sumber pemasukan</string>
     <string name="dec_nominal" translatable="false">Masukan nominal saldo</string>
