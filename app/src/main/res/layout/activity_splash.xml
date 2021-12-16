@@ -18,12 +18,14 @@
         tools:ignore="UseCompoundDrawables">
 
         <ImageView
+            android:id="@+id/appLogo"
             android:layout_width="144dp"
             android:layout_height="144dp"
             android:contentDescription="@string/title_null"
             android:src="@drawable/img_logo" />
 
         <TextView
+            android:id="@+id/tvNameApp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
