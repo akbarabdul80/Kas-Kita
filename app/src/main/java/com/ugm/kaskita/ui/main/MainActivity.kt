@@ -43,7 +43,6 @@ class MainActivity : AppCompatActivity(), BottomMainFragment.BottomSheet {
         setContentView(R.layout.activity_main)
         database = Firebase.database.reference
 
-
         with(binding) {
 
             when (SimpleDateFormat("HH").format(Date()).toInt()) {

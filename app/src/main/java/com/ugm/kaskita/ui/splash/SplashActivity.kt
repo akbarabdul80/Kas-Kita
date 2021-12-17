@@ -14,7 +14,7 @@ import com.ugm.kaskita.ui.main.MainActivity
 
 class SplashActivity : AppCompatActivity() {
 
-    private val appSpalsh: Animation by lazy {
+    private val appSplash: Animation by lazy {
         AnimationUtils.loadAnimation(this, R.anim.app_splash)
     }
 
@@ -28,7 +28,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.appLogo.startAnimation(appSpalsh)
+        binding.appLogo.startAnimation(appSplash)
         binding.tvNameApp.startAnimation(bottomToTop)
 
         Handler(Looper.getMainLooper()).postDelayed(

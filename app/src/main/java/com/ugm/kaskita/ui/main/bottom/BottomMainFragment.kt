@@ -19,6 +19,7 @@ import com.ugm.kaskita.utils.Validation.itText
 private const val TYPE = "type"
 
 class BottomMainFragment : SuperBottomSheetFragment() {
+
     private var type: String? = null
     private val binding: FragmentBottomMainBinding by viewBinding()
     private lateinit var parent: BottomSheet
